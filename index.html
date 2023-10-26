@@ -45,12 +45,11 @@
                         playIcon.style.display = 'block';
                         pauseIcon.style.display = 'none';
                     }
+                });
+
+                vidContainer.addEventListener('mousemove', showPlayButton); // Show the button on mousemove
+                hidePlayButton(); // Initially start hiding the button
             });
-
-    vidContainer.addEventListener('mousemove', showPlayButton); // Show the button on mousemove
-    hidePlayButton(); // Initially start hiding the button
-});
-
 
         </script>
     </head>
@@ -72,6 +71,6 @@
         </div>
     </header>
     <body>
-        
+
     </body>
 </html>

@@ -1,8 +1,36 @@
-#nav-container {
-    display: flex;
-    justify-content: center;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-#nav-bar {
+#vid-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
 
-} 
+#announcement-vid {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#playButton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#playIcon {
+    display: block;
+}
+
+#pauseIcon {
+    display: none;
+}

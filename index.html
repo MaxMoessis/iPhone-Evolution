@@ -6,71 +6,29 @@
         <link rel="icon" href="./media/smile.png"/>
         <link href="./styles.css" rel="stylesheet"/>
         <script src="./jquery-3.7.0.min.js"></script>
-        <script>
-            $(document).ready(function() {
-                var video = document.getElementById('announcement-vid');
-                var playButton = document.getElementById('playButton');
-                var playIcon = document.getElementById('playIcon');
-                var pauseIcon = document.getElementById('pauseIcon');
-                var vidContainer = document.getElementById('vid-container');
-                var timeout; // Variable to store the timeout ID for hiding the button
-
-                video.addEventListener('ended', function() {
-                    $('html, body').animate({
-                        scrollTop: $(document).height()
-                    }, 5000, function() {
-                        $('html').css('display', 'block');
-                    });
-                });
-
-                function hidePlayButton() {
-                    timeout = setTimeout(function() {
-                        playButton.style.display = 'none';
-                    }, 2000);
-                }
-
-                function showPlayButton() {
-                    playButton.style.display = 'block';
-                    clearTimeout(timeout); // Clear the previous timeout
-                    hidePlayButton(); // Start a new timeout for hiding the button
-                }
-
-                playButton.addEventListener('click', function() {
-                    if (video.paused) {
-                        video.play();
-                        playIcon.style.display = 'none';
-                        pauseIcon.style.display = 'block';
-                    } else {
-                        video.pause();
-                        playIcon.style.display = 'block';
-                        pauseIcon.style.display = 'none';
-                    }
-                });
-
-                vidContainer.addEventListener('mousemove', showPlayButton); // Show the button on mousemove
-                hidePlayButton(); // Initially start hiding the button
-            });
-
-        </script>
+        <script src="./docFunction.js"></script>
     </head>
     <header>
         <div id="vid-container">
-            <video id="announcement-vid">
-                <source src="media/steveVid.mp4">
+            <video id="announcement-vid" poster="media/vidPoster.png" controls>
+                <source src="media/steveVid.mp4" >
                 <p>Video does not work in this browser. Please upgrade to a more modern browser</p>
             </video>
             <button id="playButton">
                 <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 40 40">
-                    <polygon points="20,10 40,20 20,30" fill="#fff"/>
+                    <polygon points="20,10 40,20 20,30" fill="rgba(255, 255, 255, 0.7)"/>
                 </svg>
                 <svg id="pauseIcon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 40 40">
-                    <rect x="16" y="10" width="8" height="20" fill="#fff"/>
-                    <rect x="26" y="10" width="8" height="20" fill="#fff"/>
+                    <rect x="16" y="10" width="8" height="20" fill="rgba(255, 255, 255, 0.7)"/>
+                    <rect x="26" y="10" width="8" height="20" fill="rgba(255, 255, 255, 0.7)"/>
                 </svg>
             </button>                      
         </div>
     </header>
     <body>
-
+        <section>
+            <img src="./media/horizontal-iPhone.png" alt="whoopsies" id="border-iPhone">
+            <div id="filler"></div>
+        </section>
     </body>
 </html>

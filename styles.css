@@ -34,3 +34,13 @@
 #pauseIcon {
     display: none;
 }
+
+#border-iPhone {
+    width: 100%;
+}
+
+#filler {
+    height: 500px;
+    width: 100vw;
+    background-color: black;
+}

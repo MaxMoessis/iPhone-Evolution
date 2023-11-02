@@ -1,13 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap'); /* iPhone Evolution font */
+@import url('https://fonts.googleapis.com/css2?family=Heebo&family=Nunito&display=swap'); /* paragraph font? */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box; /* Add this line to include border and padding in element's total width and height calculation */
-    background-color: rgb(210, 224, 226);
-    background-attachment: fixed;
-}
-
-html {
-
+    background-color: black;
 }
 
 #vid-container {
@@ -32,25 +30,103 @@ html {
     background: none;
     border: none;
     cursor: pointer;
+    background-color: transparent;
 }
 
 #playIcon {
     display: block;
+    background-color: transparent;
 }
 
 #pauseIcon {
     display: none;
+    background-color: transparent;
 }
 
 #border-iPhone {
     width: 100%;
-    display: block; /* Add this line to ensure it's a block-level element */
-    margin: 0; /* Reset margin */
-    padding: 0; /* Reset padding */
+    display: block; 
+    margin: 0; 
+    padding: 0; 
 }
 
-#filler {
-    height: 500px;
-    width: 100vw;
+#border-iPhone-other {
+    transform: rotate(180deg);
+    width: 100%;
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+#main-header {
+    font-size: 60px;
+}
+
+.animated-text {
+    font-family: 'Nunito', sans-serif;
     background-color: black;
+    color: white;
+    text-align: center;
+    padding: 100px;
+}
+
+.hidden { /* provides the animations with a beginning state */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s, transform 1s;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.main-txt {
+    font-family: 'Nunito', sans-serif;
+    color: white;
+}
+
+#introduction-txt {
+    text-align: center;
+    /* padding: 0px 80px 80px 80px; */
+    font-size: 25px;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate {
+    animation-name: rotate;
+    animation-duration: 6s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+#left-txt {
+
+}
+
+#right-txt {
+
+}
+
+.logo-info-cont {
+
+}
+
+#apple-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+#standalone-spinner {
+    --rotation-angle: 0deg; /* Initial rotation angle */
+    transform: rotate(var(--rotation-angle));
+    background-color: transparent;
 }

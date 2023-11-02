@@ -16,19 +16,35 @@
             </video>
             <button id="playButton">
                 <svg id="playIcon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 40 40">
-                    <polygon points="20,10 40,20 20,30" fill="rgba(255, 255, 255, 0.7)"/>
+                    <polygon points="20,10 40,20 20,30" fill="rgba(200, 255, 255, 0.7)"/>
                 </svg>
                 <svg id="pauseIcon" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 40 40">
-                    <rect x="16" y="10" width="8" height="20" fill="rgba(255, 255, 255, 0.7)"/>
-                    <rect x="26" y="10" width="8" height="20" fill="rgba(255, 255, 255, 0.7)"/>
+                    <rect x="16" y="10" width="6" height="20" fill="rgba(200, 255, 255, 0.7)"/>
+                    <rect x="26" y="10" width="6" height="20" fill="rgba(200, 255, 255, 0.7)"/>
                 </svg>
             </button>                      
         </div>
     </header>
     <body>
-        <section>
-            <img src="./media/horizontal-iPhone.png" alt="whoopsies" id="border-iPhone">
-            <div id="filler"></div>
+        <section id="title-sec">
+            <img src="./media/horizontal-iPhone.png" alt="iPhone-Horizontal" id="border-iPhone">
+            <div id="header-container">
+                <h1 class="animated-text hidden" id="main-header">Evolution of the iPhone</h1>
+            </div>
+            <img src="./media/horizontal-iPhone.png" alt="iPhone-Horizontal" id="border-iPhone-other">
         </section>
+        <section id="introduction-txt" class="main-txt animated-text hidden">
+            <h1>
+                The release of the iPhone is one of the most influential 
+                innovations in the 21st century, and today we're going to 
+                run through the ins and outs of every version!
+            <h1>
+        </section>
+
+        <div id="apple-wrapper">
+            <img src="./media/apple-logos/blue.png" alt="blue apple"
+             class="rotate" id="standalone-spinner">
+        </div>
+
     </body>
 </html>

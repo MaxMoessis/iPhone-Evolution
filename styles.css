@@ -1,6 +1,13 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /* Add this line to include border and padding in element's total width and height calculation */
+    background-color: rgb(210, 224, 226);
+    background-attachment: fixed;
+}
+
+html {
+
 }
 
 #vid-container {
@@ -37,6 +44,9 @@
 
 #border-iPhone {
     width: 100%;
+    display: block; /* Add this line to ensure it's a block-level element */
+    margin: 0; /* Reset margin */
+    padding: 0; /* Reset padding */
 }
 
 #filler {

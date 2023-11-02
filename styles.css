@@ -76,7 +76,7 @@
     transition: opacity 1s, transform 1s;
 }
 
-.visible {
+.visible {  /* the class that's added with addClass() */
     opacity: 1;
     transform: translateY(0);
 }
@@ -123,10 +123,18 @@
 #apple-wrapper {
     display: flex;
     justify-content: center;
+    background-color: transparent;
 }
 
 #standalone-spinner {
     --rotation-angle: 0deg; /* Initial rotation angle */
     transform: rotate(var(--rotation-angle));
     background-color: transparent;
+}
+
+.iPhone-title {
+    font-size: 30px;
+    color: white;
+    text-align: center;
+    padding: 100px;
 }

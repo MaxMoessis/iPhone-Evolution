@@ -1,45 +1,41 @@
 $(document).ready(function() {
-    var video = document.getElementById('announcement-vid');
-    var playButton = document.getElementById('playButton');
-    var playIcon = document.getElementById('playIcon');
-    var pauseIcon = document.getElementById('pauseIcon');
-    var vidContainer = document.getElementById('vid-container');
-    var timeout; // Variable to store the timeout ID for hiding the button
+    var steveVideo = $('#announcement-vid');
+    var playButton = $('#playButton');
+    var playIcon = $('#playIcon');
+    var pauseIcon = $('#pauseIcon');
+    var vidContainer = $('#vid-container');
 
-    video.addEventListener("ended", function() {
-        // Scroll to the desired pageYOffset value (850 in this case)
-        window.scrollTo({
-            top: 850,
-            behavior: "smooth" // You can use "auto" for instant scroll
-        });
+    steveVideo.on('ended', function() {
+        // Use jQuery's animate method to scroll smoothly
+        $('html, body').animate({
+            scrollTop: 900
+        }, 1500);
     });
     
     function hidePlayButton() {
-        timeout = setTimeout(function() {
-            playButton.style.display = 'none';
-        }, 2000);
+        playButton.delay(2000).fadeOut();
     }
-
+    
     function showPlayButton() {
-        playButton.style.display = 'block';
-        clearTimeout(timeout); // Clear the previous timeout
-        hidePlayButton(); // Start a new timeout for hiding the button
-    }
-
+        playButton.stop(true, true).css('display', 'block'); 
+        hidePlayButton();
+    }    
+    
     // handles the play/pause button
-    playButton.addEventListener('click', function() {
-        if (video.paused) {
-            video.play();
-            playIcon.style.display = 'none';
-            pauseIcon.style.display = 'block';
+    playButton.on('click', function() {
+        if (steveVideo.get(0).paused) {
+            steveVideo.get(0).play();
+            playIcon.css('display', 'none');
+            pauseIcon.css('display', 'block');
         } else {
-            video.pause();
-            playIcon.style.display = 'block';
-            pauseIcon.style.display = 'none';
+            steveVideo.get(0).pause();
+            playIcon.css('display', 'block');
+            pauseIcon.css('display', 'none');
         }
     });
 
-    vidContainer.addEventListener('mousemove', showPlayButton); // Show the button on mousemove
+
+    vidContainer.on('mousemove', showPlayButton); // Show the button on mousemove
     hidePlayButton(); // Initially start hiding the button
 
     /* Header Animation */
@@ -52,12 +48,12 @@ $(document).ready(function() {
     $(window).scroll(function () {
         var scrollPos = $(this).scrollTop();
 
-        // handles when the header animation activates
+        // handles when the text fade in animations activate
         if (scrollPos >= headerAnimationTriggerpoint) {
             animatedHeader.addClass('visible');
             console.log("ayoyoyeyoyoyo"); // debugging purposes (ignore)
-        } else {    // let's the animation redo when the user scrolls down again
-            animatedHeader.removeClass('visible');
+        } else {    
+            animatedHeader.removeClass('visible'); // let's the animation redo when the user scrolls down again
         }
 
         if (scrollPos >= introTextTP) {
@@ -69,9 +65,10 @@ $(document).ready(function() {
 
         // Pause the video when the pageYOffset is 20 or more
         if (scrollPos >= 20) {
-            video.pause();
+            steveVideo.get(0).pause();
+        } else {
+            steveVideo.get(0).play();
         }
     });
 
-    
 });

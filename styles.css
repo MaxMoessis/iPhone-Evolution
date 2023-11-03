@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap'); /* iPhone Evolution font */
-@import url('https://fonts.googleapis.com/css2?family=Heebo&family=Nunito&display=swap'); /* paragraph font? */
 
 * {
     margin: 0;
@@ -10,9 +9,17 @@
 
 #vid-container {
     position: relative;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
+}
+
+#indication {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    padding: 100px;
+    background-color: transparent;
 }
 
 #announcement-vid {
@@ -73,7 +80,7 @@
 .hidden { /* provides the animations with a beginning state */
     opacity: 0;
     transform: translateY(20px);
-    transition: opacity 1s, transform 1s;
+    transition: opacity 0.8s, transform 0.8s;
 }
 
 .visible {  /* the class that's added with addClass() */
@@ -108,18 +115,6 @@
     animation-iteration-count: infinite;
 }
 
-#left-txt {
-
-}
-
-#right-txt {
-
-}
-
-.logo-info-cont {
-
-}
-
 #apple-wrapper {
     display: flex;
     justify-content: center;
@@ -133,8 +128,47 @@
 }
 
 .iPhone-title {
-    font-size: 30px;
-    color: white;
+    font-size: 40px;
+    color: black;
     text-align: center;
     padding: 100px;
+    background-color: white;
+    margin: 100px;
+    border-radius: 30px;;
+}
+
+#orig {
+    width: 500px;
+    height: 500px;
+}
+
+.iPhone-info-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    font-size: 25px;
+}
+.iPhone-info-container img {
+    margin-left: 50px;
+}
+.iPhone-info-container li {
+    list-style-type: none;
+    margin: 20px;
+}
+.iPhone-info-container ul {
+    flex-grow: 2;
+    margin: 0 50px 50px 50px;
+}
+
+#threeG {
+    margin-left: 200px;
+}
+#iPhone-four {
+    margin-left: 100px;
+    width: 500px;
+    height: 500px;
+}
+
+#steve-foot {
+    margin-top: 200px;
 }

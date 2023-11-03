@@ -10,7 +10,8 @@
     </head>
     <header>
         <div id="vid-container">
-            <video id="announcement-vid" poster="media/vidPoster.png" controls>
+            <h2 id="indication">SCROLL UP OR DOWN TO PAUSE/PLAY</h2>
+            <video id="announcement-vid" poster="media/vidPoster.png">
                 <source src="media/steveVid.mp4" >
                 <p>Video does not work in this browser. Please upgrade to a more modern browser</p>
             </video>
@@ -26,33 +27,99 @@
         </div>
     </header>
     <body>
+
         <section id="title-sec">
             <img src="./media/horizontal-iPhone.png" alt="iPhone-Horizontal" id="border-iPhone">
             <div id="header-container">
-                <h1 class="animated-text hidden" id="main-header">Evolution of the iPhone</h1>
+                <h1 class="animated-text text-animate hidden" id="main-header">Evolution of the iPhone</h1>
             </div>
             <img src="./media/horizontal-iPhone.png" alt="iPhone-Horizontal" id="border-iPhone-other">
         </section>
-        <section id="introduction-txt" class="main-txt animated-text hidden">
+        <section id="introduction-txt" class="main-txt animated-text text-animate hidden">
             <h1>
                 The release of the iPhone is one of the most influential 
                 innovations in the 21st century, and today we're going to 
-                run through the ins and outs of every version!
+                run through the ins and outs of every edition.
             <h1>
         </section>
 
         <div id="apple-wrapper">
-             <img src="./media/apple-logos/blue.png" alt="blue apple" class="rotate" id="standalone-spinner">             
+             <img src="./media/apple-logos/blue.png" alt="blue apple" class="rotate" id="standalone-spinner"> 
         </div>
 
-        <section id="evolution-section" class="main-txt" >
-            <article>
-                <h2 class="iPhone-title">So basically</h2>
+        <section id="evolution-section" class="main-txt">
+            <h2 id="the-original" class="iPhone-title text-animate-stay hidden">BEHOLD: THE ORIGINAL</h2>
+            <article class="iPhone-info-container text-animate-stay hidden">
+                <img src="./media/iPhones/iPhone(2g).png" id="orig" alt="original iphone photo">
+                <ul>
+                    <li class="text-animate hidden">
+                        Released: June 2007
+                    </li>
+                    <li class="text-animate hidden">
+                        Price: $599 USD
+                    </li>
+                    <li class="text-animate hidden">
+                        The first iPhone ever, it had 16GB storage (which was HUGE). 
+                    </li>
+                    <li class="text-animate hidden">
+                        The release of this device was the beginning of the smartphone era, 
+                        which is why the video above is such a big moment in history.
+                    </li>
+                    <li class="text-animate hidden">
+                        If you had one of these back in the day, you were instantly the 
+                        coolest person in the office.
+                    </li>
+                </ul>
             </article>
-            <article>
 
+            <!-- I know these titles should be in the articles however since I've already configured the flex it will take so long to fix it -->
+            <h2 class="iPhone-title text-animate-stay hidden">iPhone 3G</h2>
+            <article class="iPhone-info-container text-animate-stay hidden">
+                <img src="media/iPhones/3g.png" id="threeG" alt="iPhone 3G">
+                <ul>
+                    <li class="text-animate hidden">
+                        The 2nd iPhone generation
+                    </li>
+                    <li class="text-animate hidden">
+                        Price: $699 USD
+                    </li>
+                    <li class="text-animate hidden">
+                        Exterior design mostly stayed the same, however the biggest improvement
+                        was the ability to work on the 3G network which made internet access much faster. 
+                    </li>
+                    <li class="text-animate hidden">
+                        A 3GS model also came out soon after, which was the first inclusion
+                        of voice control in an iPhone. Although it was very janky and terrible to use,
+                        it paved the way for what we now know today as Siri. 
+                    </li>
+                </ul>
+            </article>
+
+            <h2 class="iPhone-title text-animate-stay hidden">iPhone 4</h2>
+            <article class="iPhone-info-container text-animate-stay hidden">
+                <img src="./media/iPhones/4.png" id="iPhone-four" alt="iPhone 4">
+                <ul>
+                    <li class="text-animate hidden">
+                        The first ever iPhone to use an apple made processor (Apple A4)
+                    </li>
+                    <li class="text-animate hidden">
+                        Price: $699 USD
+                    </li>
+                    <li class="text-animate hidden">
+                       This iPhone was much faster than its previous generations, which made
+                       people go crazy for it, especially since it was the same price as the 3G
+                    </li>
+                    <li class="text-animate hidden">
+                        Other than the better processor, the only differences were that it
+                        looks much nicer (one of my favourite iPhone looks) and a better camera 
+                        that was capable of shooting 480P video. 
+                    </li>
+                </ul>
             </article>
         </section>
 
     </body>
+    <footer>
+        <img src="./media/steve-jobs.png" id="steve-foot" alt="stevey">
+    </footer>
 </html>

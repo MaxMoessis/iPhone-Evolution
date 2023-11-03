@@ -4,6 +4,7 @@ $(document).ready(function() {
     var playIcon = $('#playIcon');
     var pauseIcon = $('#pauseIcon');
     var vidContainer = $('#vid-container');
+    var scrollHelp = $('#indication');
 
     steveVideo.on('ended', function() {
         // Use jQuery's animate method to scroll smoothly
@@ -11,6 +12,15 @@ $(document).ready(function() {
             scrollTop: 900
         }, 1500);
     });
+
+    function hideScrollHelp() {
+        scrollHelp.delay(2000).fadeOut();
+    }
+
+    function showScrollHelp() {
+        scrollHelp.stop(true, true).css('display', 'block');
+        hideScrollHelp();
+    }
     
     function hidePlayButton() {
         playButton.delay(2000).fadeOut();
@@ -34,40 +44,64 @@ $(document).ready(function() {
         }
     });
 
+    vidContainer.on('mousemove', function() {
+        showPlayButton(); // Show the button on mousemove
+        showScrollHelp(); // Show the 'scroll down to pause/play' text
+    });
 
-    vidContainer.on('mousemove', showPlayButton); // Show the button on mousemove
+
     hidePlayButton(); // Initially start hiding the button
+    hideScrollHelp(); // Initially start hiding the scroll help
 
-    /* Header Animation */
-    var animatedHeader = $('#main-header');
-    var headerAnimationTriggerpoint = animatedHeader.offset().top - 500;
+    // Function to handle scroll animation for elements with the "text-animate" class
+    function handleTextAnimations() {
+        $('.text-animate').each(function() {
+            var text = $(this);
+            var triggerPoint = text.offset().top - 550;
 
-    var introText = $('#introduction-txt');
-    var introTextTP = introText.offset().top - 500;
+            var scrollPos = $(window).scrollTop();
+            if (scrollPos >= triggerPoint && scrollPos <= triggerPoint + 510) {
+                text.addClass('visible');
+            } else {
+                text.removeClass('visible');
+            }
+        });
+    }
+
+    // I wanted some animations (like iPhone headers) to stay when the user scrolls past them
+    function handleStayingTextAnimations() {
+        $('.text-animate-stay').each(function() {
+            var text = $(this);
+            var triggerPoint = text.offset().top - 550;
+
+            var scrollPos = $(window).scrollTop();
+            if (scrollPos >= triggerPoint) {
+                text.addClass('visible');
+            } else {
+                text.removeClass('visible');
+            }
+        });
+    }
+
+    // Initial animation
+    // handleTextAnimations();
 
     $(window).scroll(function () {
-        var scrollPos = $(this).scrollTop();
+        // Handle animation on scroll
+        handleTextAnimations();
+        handleStayingTextAnimations();
 
-        // handles when the text fade in animations activate
-        if (scrollPos >= headerAnimationTriggerpoint) {
-            animatedHeader.addClass('visible');
-            console.log("ayoyoyeyoyoyo"); // debugging purposes (ignore)
-        } else {    
-            animatedHeader.removeClass('visible'); // let's the animation redo when the user scrolls down again
-        }
-
-        if (scrollPos >= introTextTP) {
-            introText.addClass('visible');
-            console.log("uhhhhh");
-        } else {
-            introText.removeClass('visible');
-        }
+        var _scrollPos = $(window).scrollTop();
 
         // Pause the video when the pageYOffset is 20 or more
-        if (scrollPos >= 20) {
+        if (_scrollPos >= 20) {
             steveVideo.get(0).pause();
+            playIcon.css('display', 'block');
+            pauseIcon.css('display', 'none');
         } else {
             steveVideo.get(0).play();
+            playIcon.css('display', 'none');
+            pauseIcon.css('display', 'block');
         }
     });
 

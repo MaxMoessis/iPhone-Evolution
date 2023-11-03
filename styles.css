@@ -3,7 +3,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Add this line to include border and padding in element's total width and height calculation */
+    box-sizing: border-box;
     background-color: black;
 }
 
@@ -99,7 +99,7 @@
     font-size: 25px;
 }
 
-@keyframes rotate {
+@keyframes rotate {  /* For the spinning Apple */
     from {
         transform: rotate(0);
     }
@@ -122,8 +122,6 @@
 }
 
 #standalone-spinner {
-    --rotation-angle: 0deg; /* Initial rotation angle */
-    transform: rotate(var(--rotation-angle));
     background-color: transparent;
 }
 
@@ -131,7 +129,7 @@
     font-size: 50px;
     color: black;
     text-align: center;
-    padding: 100px;
+    padding: 50px;
     background-color: white;
     margin: 100px;
     border-radius: 30px;
@@ -161,6 +159,10 @@
     margin: 0 50px 50px 50px;
 }
 
+/*  
+    All iPhone photos have different aspect ratios so they need 
+    to be manually adjusted for each photo
+*/
 #threeG {
     margin-left: 200px;
 }
@@ -174,12 +176,57 @@
     width: 500px;
     height: 500px;
 }
-.indented {
+#iPhone-six {
+    width: 550px;
+    height: 500px;
+}
+#iPhone-SE {
+    width: 500px;
+    height: 600px;
+    margin-top: -100px;
+}
+#iPhone-seven {
+    width: 1200px;
+    height: 575px;
     margin-left: 100px;
-    float:inline-end;
+}
+#iPhone-eight {
+    width: 500px;
+    height: 500px;
+}
+#iPhone-X {
+    width: 500px;
+    height: 500px;
+}
+#iPhone-eleven {
+    margin-left: 100px;
+    margin-top: -50px;
+    width: 600px;
+    height: 600px;
+}
+#iPhone-twelve {
+    margin-left: 50px;
+    width: 500px;
+    height: 500px;
+}
+#iPhone-thirteen {
+    margin-left: 50px;
+    width: 500px;
+    height: 500px;
+}
+#iPhone-fourteen {
+    margin-left: 50px;
+    width: 500px;
+    height: 600px;
+}
+#iPhone-fifteen {
+    margin-left: 50px;
+    width: 500px;
+    height: 500px;
 }
 
-#steve-foot {
+/* I promise it's a footer and not Steve Jobs' feet*/
+#steve-foot {  
     margin-top: 200px;
 }
 

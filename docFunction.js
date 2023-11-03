@@ -13,6 +13,8 @@ $(document).ready(function() {
         }, 1500);
     });
 
+    // Functions to control when the play/pause button is showing (and scroll text)
+
     function hideScrollHelp() {
         scrollHelp.delay(2000).fadeOut();
     }
@@ -31,7 +33,7 @@ $(document).ready(function() {
         hidePlayButton();
     }    
     
-    // handles the play/pause button
+    // handles the play/pause button functionality
     playButton.on('click', function() {
         if (steveVideo.get(0).paused) {
             steveVideo.get(0).play();
@@ -82,9 +84,6 @@ $(document).ready(function() {
             }
         });
     }
-
-    // Initial animation
-    // handleTextAnimations();
 
     $(window).scroll(function () {
         // Handle animation on scroll

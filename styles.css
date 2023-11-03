@@ -128,13 +128,14 @@
 }
 
 .iPhone-title {
-    font-size: 40px;
+    font-size: 50px;
     color: black;
     text-align: center;
     padding: 100px;
     background-color: white;
     margin: 100px;
-    border-radius: 30px;;
+    border-radius: 30px;
+    font-weight: bold;
 }
 
 #orig {
@@ -168,7 +169,35 @@
     width: 500px;
     height: 500px;
 }
+#iPhone-five {
+    margin-left: 100px;
+    width: 500px;
+    height: 500px;
+}
+.indented {
+    margin-left: 100px;
+    float:inline-end;
+}
 
 #steve-foot {
     margin-top: 200px;
+}
+
+footer {
+    display: flex;
+    justify-content: space-around;
+    color: white;
+    align-items: center;
+    font-size: 30px;
+    text-align: center;
+}
+
+footer img {
+    width: 1000;
+    height: 500px;
+}
+
+footer p {
+    margin-right: 40px;
+    font-style: italic;
 }
